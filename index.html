@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cygnus Season Estimator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Ingress Cygnus Anomaly Season</p>
+          <h1 id="page-title">Cygnus Token Estimator</h1>
+          <p>
+            Estimate your daily bounty rhythm, event participation, dispatch progress,
+            global operations, and shard storms to see which Cygnus Season medal tier you are tracking toward.
+          </p>
+        </div>
+        <div class="medal-panel" aria-live="polite">
+          <div class="token-orbit" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="panel-label">Expected Tokens</p>
+          <strong id="totalTokens">0</strong>
+          <p id="tierName" class="tier-name">No medal yet</p>
+          <div class="progress-track" aria-hidden="true">
+            <div id="tierProgress" class="progress-fill"></div>
+          </div>
+          <p id="nextTier" class="next-tier">6,000 tokens to Bronze</p>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Token source summary">
+        <article>
+          <span>Daily Bounties</span>
+          <strong id="dailySummary">0</strong>
+        </article>
+        <article>
+          <span>First Saturdays</span>
+          <strong id="ifsSummary">0</strong>
+        </article>
+        <article>
+          <span>Dispatch Operations</span>
+          <strong id="dispatchSummary">0</strong>
+        </article>
+        <article>
+          <span>Global Battles</span>
+          <strong id="battlesSummary">0</strong>
+        </article>
+        <article>
+          <span>Global Deploy</span>
+          <strong id="deploySummary">0</strong>
+        </article>
+        <article>
+          <span>Shard Storms</span>
+          <strong id="shardSummary">0</strong>
+        </article>
+      </section>
+
+      <section class="calculator-grid">
+        <article class="control-panel daily-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">92 days</p>
+              <h2>Daily Bounties</h2>
+            </div>
+            <strong id="dailyTotalPercent">100%</strong>
+          </div>
+          <p class="section-note">
+            Each bounty is 10 tokens. Daily milestone bonuses add 10 tokens at 2 and 4 completed bounties (up to 60 tokens/day).
+          </p>
+          <div id="dailySliders" class="slider-stack"></div>
+        </article>
+
+        <article class="control-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">2,500 each</p>
+              <h2>First Saturday</h2>
+            </div>
+          </div>
+          <div id="ifsChecks" class="checkbox-grid compact"></div>
+        </article>
+
+        <article class="control-panel wide">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Up to 2,000 each</p>
+              <h2>Dispatch Operations</h2>
+            </div>
+          </div>
+          <div id="dispatchSliders" class="slider-stack"></div>
+        </article>
+
+        <article class="control-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Up to 8,000</p>
+              <h2>Cygnus Global Battles</h2>
+            </div>
+          </div>
+          <p class="section-note">Oct 1 – Oct 28. Complete 3 Campaign Assignments.</p>
+          <label class="range-row">
+            <span>Expected tokens</span>
+            <output id="battlesValue">0</output>
+            <input id="globalBattles" type="range" min="0" max="8000" step="100" value="0">
+          </label>
+        </article>
+
+        <article class="control-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Up to 8,000</p>
+              <h2>Cygnus Global Deploy</h2>
+            </div>
+          </div>
+          <p class="section-note">Nov 25 – Dec 16. Complete 3 Campaign Assignments.</p>
+          <label class="range-row">
+            <span>Expected tokens</span>
+            <output id="deployValue">0</output>
+            <input id="globalDeploy" type="range" min="0" max="8000" step="100" value="0">
+          </label>
+        </article>
+
+        <article class="control-panel wide">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">2,500 per event day</p>
+              <h2>Shard Storm</h2>
+            </div>
+          </div>
+          <p class="section-note">
+            Hack a portal where a Cygnus Shard Storm shard resides (max 2,500 tokens per event day, up to 3 times per season).
+          </p>
+          <div id="shardChecks" class="checkbox-grid compact"></div>
+        </article>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
